@@ -1,0 +1,259 @@
+{
+    "metadata": {
+        "configurationVersions": [3],
+        "clusterVersion": "1.194.72.20200604-122905"
+    },
+    "id": "1505d725-27a4-4ad9-a212-8f1e9baa3329",
+    "dashboardMetadata": {
+        "name": "DEM Usage - Detailed Session View",
+        "shared": false,
+        "owner": "matt.caminiti@dynatrace.com",
+        "sharingDetails": {
+            "linkShared": true,
+            "published": false
+        },
+        "dashboardFilter": {
+            "timeframe": ""
+        }
+    },
+    "tiles": [{
+        "name": "",
+        "tileType": "CUSTOM_CHARTING",
+        "configured": true,
+        "bounds": {
+            "top": 38,
+            "left": 0,
+            "width": 380,
+            "height": 342
+        },
+        "tileFilter": {},
+        "filterConfig": {
+            "type": "MIXED",
+            "customName": "Total - Sessions without replay (Web)",
+            "defaultName": "Custom chart",
+            "chartConfig": {
+                "legendShown": true,
+                "type": "SINGLE_VALUE",
+                "series": [{
+                    "metric": "builtin:billing.apps.web.sessionsWithoutReplayByApplication",
+                    "aggregation": "NONE",
+                    "type": "LINE",
+                    "entityType": "APPLICATION",
+                    "dimensions": [{
+                        "id": "0",
+                        "name": "dt.entity.application",
+                        "values": [],
+                        "entityDimension": true
+                    }],
+                    "sortAscending": false,
+                    "sortColumn": true,
+                    "aggregationRate": "TOTAL"
+                }],
+                "resultMetadata": {}
+            },
+            "filtersPerEntityType": {}
+        }
+    }, {
+        "name": "",
+        "tileType": "CUSTOM_CHARTING",
+        "configured": true,
+        "bounds": {
+            "top": 38,
+            "left": 380,
+            "width": 380,
+            "height": 342
+        },
+        "tileFilter": {},
+        "filterConfig": {
+            "type": "MIXED",
+            "customName": "Sessions without replay (Web)",
+            "defaultName": "Custom chart",
+            "chartConfig": {
+                "legendShown": true,
+                "type": "TOP_LIST",
+                "series": [{
+                    "metric": "builtin:billing.apps.web.sessionsWithoutReplayByApplication",
+                    "aggregation": "NONE",
+                    "type": "LINE",
+                    "entityType": "APPLICATION",
+                    "dimensions": [{
+                        "id": "0",
+                        "name": "dt.entity.application",
+                        "values": [],
+                        "entityDimension": true
+                    }],
+                    "sortAscending": false,
+                    "sortColumn": true,
+                    "aggregationRate": "TOTAL"
+                }],
+                "resultMetadata": {}
+            },
+            "filtersPerEntityType": {}
+        }
+    }, {
+        "name": "",
+        "tileType": "CUSTOM_CHARTING",
+        "configured": true,
+        "bounds": {
+            "top": 38,
+            "left": 760,
+            "width": 760,
+            "height": 342
+        },
+        "tileFilter": {},
+        "filterConfig": {
+            "type": "MIXED",
+            "customName": "Sessions without replay (Web)",
+            "defaultName": "Custom chart",
+            "chartConfig": {
+                "legendShown": true,
+                "type": "TIMESERIES",
+                "series": [{
+                    "metric": "builtin:billing.apps.web.sessionsWithoutReplayByApplication",
+                    "aggregation": "NONE",
+                    "type": "LINE",
+                    "entityType": "APPLICATION",
+                    "dimensions": [{
+                        "id": "0",
+                        "name": "dt.entity.application",
+                        "values": [],
+                        "entityDimension": true
+                    }],
+                    "sortAscending": false,
+                    "sortColumn": true,
+                    "aggregationRate": "TOTAL"
+                }],
+                "resultMetadata": {}
+            },
+            "filtersPerEntityType": {}
+        }
+    }, {
+        "name": "Sessions without Replay",
+        "tileType": "HEADER",
+        "configured": true,
+        "bounds": {
+            "top": 0,
+            "left": 0,
+            "width": 1406,
+            "height": 38
+        },
+        "tileFilter": {}
+    }, {
+        "name": "Sessions with Replay",
+        "tileType": "HEADER",
+        "configured": true,
+        "bounds": {
+            "top": 418,
+            "left": 0,
+            "width": 1406,
+            "height": 38
+        },
+        "tileFilter": {}
+    }, {
+        "name": "",
+        "tileType": "CUSTOM_CHARTING",
+        "configured": true,
+        "bounds": {
+            "top": 456,
+            "left": 0,
+            "width": 380,
+            "height": 342
+        },
+        "tileFilter": {},
+        "filterConfig": {
+            "type": "MIXED",
+            "customName": "Total - Sessions with replay (Web)",
+            "defaultName": "Custom chart",
+            "chartConfig": {
+                "legendShown": true,
+                "type": "SINGLE_VALUE",
+                "series": [{
+                    "metric": "builtin:billing.apps.web.sessionsWithReplayByApplication",
+                    "aggregation": "NONE",
+                    "type": "LINE",
+                    "entityType": "APPLICATION",
+                    "dimensions": [],
+                    "sortAscending": false,
+                    "sortColumn": true,
+                    "aggregationRate": "TOTAL"
+                }],
+                "resultMetadata": {}
+            },
+            "filtersPerEntityType": {}
+        }
+    }, {
+        "name": "",
+        "tileType": "CUSTOM_CHARTING",
+        "configured": true,
+        "bounds": {
+            "top": 456,
+            "left": 380,
+            "width": 380,
+            "height": 342
+        },
+        "tileFilter": {},
+        "filterConfig": {
+            "type": "MIXED",
+            "customName": "Sessions with replay (Web)",
+            "defaultName": "Custom chart",
+            "chartConfig": {
+                "legendShown": true,
+                "type": "TOP_LIST",
+                "series": [{
+                    "metric": "builtin:billing.apps.web.sessionsWithReplayByApplication",
+                    "aggregation": "NONE",
+                    "type": "LINE",
+                    "entityType": "APPLICATION",
+                    "dimensions": [{
+                        "id": "0",
+                        "name": "dt.entity.application",
+                        "values": [],
+                        "entityDimension": true
+                    }],
+                    "sortAscending": false,
+                    "sortColumn": true,
+                    "aggregationRate": "TOTAL"
+                }],
+                "resultMetadata": {}
+            },
+            "filtersPerEntityType": {}
+        }
+    }, {
+        "name": "",
+        "tileType": "CUSTOM_CHARTING",
+        "configured": true,
+        "bounds": {
+            "top": 456,
+            "left": 760,
+            "width": 760,
+            "height": 342
+        },
+        "tileFilter": {},
+        "filterConfig": {
+            "type": "MIXED",
+            "customName": "Sessions with replay (Web)",
+            "defaultName": "Custom chart",
+            "chartConfig": {
+                "legendShown": true,
+                "type": "TIMESERIES",
+                "series": [{
+                    "metric": "builtin:billing.apps.web.sessionsWithReplayByApplication",
+                    "aggregation": "NONE",
+                    "type": "LINE",
+                    "entityType": "APPLICATION",
+                    "dimensions": [{
+                        "id": "0",
+                        "name": "dt.entity.application",
+                        "values": [],
+                        "entityDimension": true
+                    }],
+                    "sortAscending": false,
+                    "sortColumn": true,
+                    "aggregationRate": "TOTAL"
+                }],
+                "resultMetadata": {}
+            },
+            "filtersPerEntityType": {}
+        }
+    }]
+}

@@ -1,0 +1,358 @@
+{
+    "metadata": {
+        "configurationVersions": [3],
+        "clusterVersion": "1.194.72.20200604-122905"
+    },
+    "id": "822d9f90-55ed-4e87-b367-8b7686c185b0",
+    "dashboardMetadata": {
+        "name": "DEM Usage - Overview",
+        "shared": false,
+        "owner": "matt.caminiti@dynatrace.com",
+        "sharingDetails": {
+            "linkShared": true,
+            "published": false
+        },
+        "dashboardFilter": {
+            "timeframe": ""
+        }
+    },
+    "tiles": [{
+        "name": "",
+        "tileType": "CUSTOM_CHARTING",
+        "configured": true,
+        "bounds": {
+            "top": 38,
+            "left": 0,
+            "width": 380,
+            "height": 342
+        },
+        "tileFilter": {
+            "timeframe": "-30d to now"
+        },
+        "filterConfig": {
+            "type": "MIXED",
+            "customName": "Total - Synthetic Actions (Browser Monitor)",
+            "defaultName": "Custom chart",
+            "chartConfig": {
+                "legendShown": true,
+                "type": "SINGLE_VALUE",
+                "series": [{
+                    "metric": "builtin:billing.synthetic.actions",
+                    "aggregation": "NONE",
+                    "type": "LINE",
+                    "entityType": "SYNTHETIC_TEST",
+                    "dimensions": [],
+                    "sortAscending": false,
+                    "sortColumn": true,
+                    "aggregationRate": "TOTAL"
+                }],
+                "resultMetadata": {}
+            },
+            "filtersPerEntityType": {}
+        }
+    }, {
+        "name": "DEM Usage - Synthetics (Last 30 Days)",
+        "tileType": "HEADER",
+        "configured": true,
+        "bounds": {
+            "top": 0,
+            "left": 0,
+            "width": 760,
+            "height": 38
+        },
+        "tileFilter": {}
+    }, {
+        "name": "",
+        "tileType": "CUSTOM_CHARTING",
+        "configured": true,
+        "bounds": {
+            "top": 38,
+            "left": 380,
+            "width": 380,
+            "height": 342
+        },
+        "tileFilter": {
+            "timeframe": "-30d to now"
+        },
+        "filterConfig": {
+            "type": "MIXED",
+            "customName": "Total - Synthetic Requests (HTTP Monitors)",
+            "defaultName": "Custom chart",
+            "chartConfig": {
+                "legendShown": true,
+                "type": "SINGLE_VALUE",
+                "series": [{
+                    "metric": "builtin:billing.synthetic.requests",
+                    "aggregation": "NONE",
+                    "type": "LINE",
+                    "entityType": "SYNTHETIC_HTTPCHECK",
+                    "dimensions": [],
+                    "sortAscending": false,
+                    "sortColumn": true,
+                    "aggregationRate": "TOTAL"
+                }],
+                "resultMetadata": {}
+            },
+            "filtersPerEntityType": {}
+        }
+    }, {
+        "name": "DEM Usage - Sessions (Last 30 Days)",
+        "tileType": "HEADER",
+        "configured": true,
+        "bounds": {
+            "top": 0,
+            "left": 798,
+            "width": 760,
+            "height": 38
+        },
+        "tileFilter": {}
+    }, {
+        "name": "",
+        "tileType": "CUSTOM_CHARTING",
+        "configured": true,
+        "bounds": {
+            "top": 38,
+            "left": 798,
+            "width": 380,
+            "height": 342
+        },
+        "tileFilter": {
+            "timeframe": "-30d to now"
+        },
+        "filterConfig": {
+            "type": "MIXED",
+            "customName": "Total - Sessions without replay (Web)",
+            "defaultName": "Custom chart",
+            "chartConfig": {
+                "legendShown": true,
+                "type": "SINGLE_VALUE",
+                "series": [{
+                    "metric": "builtin:billing.apps.web.sessionsWithoutReplayByApplication",
+                    "aggregation": "NONE",
+                    "type": "LINE",
+                    "entityType": "APPLICATION",
+                    "dimensions": [{
+                        "id": "0",
+                        "name": "dt.entity.application",
+                        "values": [],
+                        "entityDimension": true
+                    }],
+                    "sortAscending": false,
+                    "sortColumn": true,
+                    "aggregationRate": "TOTAL"
+                }],
+                "resultMetadata": {}
+            },
+            "filtersPerEntityType": {}
+        }
+    }, {
+        "name": "",
+        "tileType": "CUSTOM_CHARTING",
+        "configured": true,
+        "bounds": {
+            "top": 38,
+            "left": 1178,
+            "width": 380,
+            "height": 342
+        },
+        "tileFilter": {
+            "timeframe": "-30d to now"
+        },
+        "filterConfig": {
+            "type": "MIXED",
+            "customName": "Total - Sessions with replay (Web)",
+            "defaultName": "Custom chart",
+            "chartConfig": {
+                "legendShown": true,
+                "type": "SINGLE_VALUE",
+                "series": [{
+                    "metric": "builtin:billing.apps.web.sessionsWithReplayByApplication",
+                    "aggregation": "NONE",
+                    "type": "LINE",
+                    "entityType": "APPLICATION",
+                    "dimensions": [],
+                    "sortAscending": false,
+                    "sortColumn": true,
+                    "aggregationRate": "TOTAL"
+                }],
+                "resultMetadata": {}
+            },
+            "filtersPerEntityType": {}
+        }
+    }, {
+        "name": "DEM Usage - Synthetics (Previous 30 Days)",
+        "tileType": "HEADER",
+        "configured": true,
+        "bounds": {
+            "top": 418,
+            "left": 0,
+            "width": 760,
+            "height": 38
+        },
+        "tileFilter": {}
+    }, {
+        "name": "DEM Usage - Sessions (Previous 30 Days)",
+        "tileType": "HEADER",
+        "configured": true,
+        "bounds": {
+            "top": 418,
+            "left": 798,
+            "width": 760,
+            "height": 38
+        },
+        "tileFilter": {}
+    }, {
+        "name": "",
+        "tileType": "CUSTOM_CHARTING",
+        "configured": true,
+        "bounds": {
+            "top": 456,
+            "left": 0,
+            "width": 380,
+            "height": 342
+        },
+        "tileFilter": {
+            "timeframe": "-30d to -60d"
+        },
+        "filterConfig": {
+            "type": "MIXED",
+            "customName": "Total - Synthetic Actions (Browser Monitor)",
+            "defaultName": "Custom chart",
+            "chartConfig": {
+                "legendShown": true,
+                "type": "SINGLE_VALUE",
+                "series": [{
+                    "metric": "builtin:billing.synthetic.actions",
+                    "aggregation": "NONE",
+                    "type": "LINE",
+                    "entityType": "SYNTHETIC_TEST",
+                    "dimensions": [],
+                    "sortAscending": false,
+                    "sortColumn": true,
+                    "aggregationRate": "TOTAL"
+                }],
+                "resultMetadata": {}
+            },
+            "filtersPerEntityType": {}
+        }
+    }, {
+        "name": "",
+        "tileType": "CUSTOM_CHARTING",
+        "configured": true,
+        "bounds": {
+            "top": 456,
+            "left": 380,
+            "width": 380,
+            "height": 342
+        },
+        "tileFilter": {
+            "timeframe": "-30d to -60d"
+        },
+        "filterConfig": {
+            "type": "MIXED",
+            "customName": "Total - Synthetic Requests (HTTP Monitors)",
+            "defaultName": "Custom chart",
+            "chartConfig": {
+                "legendShown": true,
+                "type": "SINGLE_VALUE",
+                "series": [{
+                    "metric": "builtin:billing.synthetic.requests",
+                    "aggregation": "NONE",
+                    "type": "LINE",
+                    "entityType": "SYNTHETIC_HTTPCHECK",
+                    "dimensions": [],
+                    "sortAscending": false,
+                    "sortColumn": true,
+                    "aggregationRate": "TOTAL"
+                }],
+                "resultMetadata": {}
+            },
+            "filtersPerEntityType": {}
+        }
+    }, {
+        "name": "",
+        "tileType": "CUSTOM_CHARTING",
+        "configured": true,
+        "bounds": {
+            "top": 456,
+            "left": 798,
+            "width": 380,
+            "height": 342
+        },
+        "tileFilter": {
+            "timeframe": "-30d to -60d"
+        },
+        "filterConfig": {
+            "type": "MIXED",
+            "customName": "Total - Sessions without replay (Web)",
+            "defaultName": "Custom chart",
+            "chartConfig": {
+                "legendShown": true,
+                "type": "SINGLE_VALUE",
+                "series": [{
+                    "metric": "builtin:billing.apps.web.sessionsWithoutReplayByApplication",
+                    "aggregation": "NONE",
+                    "type": "LINE",
+                    "entityType": "APPLICATION",
+                    "dimensions": [{
+                        "id": "0",
+                        "name": "dt.entity.application",
+                        "values": [],
+                        "entityDimension": true
+                    }],
+                    "sortAscending": false,
+                    "sortColumn": true,
+                    "aggregationRate": "TOTAL"
+                }],
+                "resultMetadata": {}
+            },
+            "filtersPerEntityType": {}
+        }
+    }, {
+        "name": "",
+        "tileType": "CUSTOM_CHARTING",
+        "configured": true,
+        "bounds": {
+            "top": 456,
+            "left": 1178,
+            "width": 380,
+            "height": 342
+        },
+        "tileFilter": {
+            "timeframe": "-30d to -60d"
+        },
+        "filterConfig": {
+            "type": "MIXED",
+            "customName": "Total - Sessions with replay (Web)",
+            "defaultName": "Custom chart",
+            "chartConfig": {
+                "legendShown": true,
+                "type": "SINGLE_VALUE",
+                "series": [{
+                    "metric": "builtin:billing.apps.web.sessionsWithReplayByApplication",
+                    "aggregation": "NONE",
+                    "type": "LINE",
+                    "entityType": "APPLICATION",
+                    "dimensions": [],
+                    "sortAscending": false,
+                    "sortColumn": true,
+                    "aggregationRate": "TOTAL"
+                }],
+                "resultMetadata": {}
+            },
+            "filtersPerEntityType": {}
+        }
+    }, {
+        "name": "Markdown",
+        "tileType": "MARKDOWN",
+        "configured": true,
+        "bounds": {
+            "top": 798,
+            "left": 0,
+            "width": 304,
+            "height": 152
+        },
+        "tileFilter": {},
+        "markdown": "## [Synthetic Details](#dashboard;gtf=l_30_DAYS;gf=all;id=08769027-884f-40dd-9714-1747aacc0b57)\n\n## [Session Details](#dashboard;gtf=l_30_DAYS;gf=all;id=1505d725-27a4-4ad9-a212-8f1e9baa3329)\n"
+    }]
+}
