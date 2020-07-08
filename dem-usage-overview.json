@@ -51,7 +51,7 @@
             "filtersPerEntityType": {}
         }
     }, {
-        "name": "DEM Usage - Synthetics (Last 30 Days)",
+        "name": "Synthetics (Last 30 Days)",
         "tileType": "HEADER",
         "configured": true,
         "bounds": {
@@ -96,7 +96,7 @@
             "filtersPerEntityType": {}
         }
     }, {
-        "name": "DEM Usage - Sessions (Last 30 Days)",
+        "name": "Sessions (Last 30 Days)",
         "tileType": "HEADER",
         "configured": true,
         "bounds": {
@@ -180,7 +180,7 @@
             "filtersPerEntityType": {}
         }
     }, {
-        "name": "DEM Usage - Synthetics (Previous 30 Days)",
+        "name": "Synthetics (Previous 30 Days)",
         "tileType": "HEADER",
         "configured": true,
         "bounds": {
@@ -191,7 +191,7 @@
         },
         "tileFilter": {}
     }, {
-        "name": "DEM Usage - Sessions (Previous 30 Days)",
+        "name": "Sessions (Previous 30 Days)",
         "tileType": "HEADER",
         "configured": true,
         "bounds": {
