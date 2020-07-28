@@ -1,20 +1,21 @@
 {
     "metadata": {
         "configurationVersions": [3],
-        "clusterVersion": "1.194.72.20200604-122905"
+        "clusterVersion": "1.199.29.20200723-161931"
     },
-    "id": "822d9f90-55ed-4e87-b367-8b7686c185b0",
+    "id": "bbbbbbbb-0002-0000-0000-000000000000",
     "dashboardMetadata": {
         "name": "DEM Usage - Overview",
-        "shared": false,
+        "shared": true,
         "owner": "matt.caminiti@dynatrace.com",
         "sharingDetails": {
             "linkShared": true,
-            "published": false
+            "published": true
         },
         "dashboardFilter": {
             "timeframe": ""
-        }
+        },
+        "tags": ["Configurator"]
     },
     "tiles": [{
         "name": "",
@@ -132,10 +133,10 @@
                     "type": "LINE",
                     "entityType": "APPLICATION",
                     "dimensions": [{
-                        "id": "0",
-                        "name": "dt.entity.application",
-                        "values": [],
-                        "entityDimension": true
+                        "id": "1",
+                        "name": "Type",
+                        "values": ["Billed"],
+                        "entityDimension": false
                     }],
                     "sortAscending": false,
                     "sortColumn": true,
@@ -170,7 +171,12 @@
                     "aggregation": "NONE",
                     "type": "LINE",
                     "entityType": "APPLICATION",
-                    "dimensions": [],
+                    "dimensions": [{
+                        "id": "1",
+                        "name": "Type",
+                        "values": ["Billed"],
+                        "entityDimension": false
+                    }],
                     "sortAscending": false,
                     "sortColumn": true,
                     "aggregationRate": "TOTAL"
@@ -295,10 +301,10 @@
                     "type": "LINE",
                     "entityType": "APPLICATION",
                     "dimensions": [{
-                        "id": "0",
-                        "name": "dt.entity.application",
-                        "values": [],
-                        "entityDimension": true
+                        "id": "1",
+                        "name": "Type",
+                        "values": ["Billed"],
+                        "entityDimension": false
                     }],
                     "sortAscending": false,
                     "sortColumn": true,
@@ -333,7 +339,12 @@
                     "aggregation": "NONE",
                     "type": "LINE",
                     "entityType": "APPLICATION",
-                    "dimensions": [],
+                    "dimensions": [{
+                        "id": "1",
+                        "name": "Type",
+                        "values": ["Billed"],
+                        "entityDimension": false
+                    }],
                     "sortAscending": false,
                     "sortColumn": true,
                     "aggregationRate": "TOTAL"
@@ -353,6 +364,6 @@
             "height": 152
         },
         "tileFilter": {},
-        "markdown": "## [Synthetic Details](#dashboard;gtf=l_30_DAYS;gf=all;id=08769027-884f-40dd-9714-1747aacc0b57)\n\n## [Session Details](#dashboard;gtf=l_30_DAYS;gf=all;id=1505d725-27a4-4ad9-a212-8f1e9baa3329)\n"
+        "markdown": "## [Synthetic Details](#dashboard;gtf=l_30_DAYS;gf=all;id=bbbbbbbb-0002-0000-0000-000000000001)\n\n## [Session Details](#dashboard;gtf=l_30_DAYS;gf=all;id=bbbbbbbb-0002-0000-0000-000000000002)\n"
     }]
 }
