@@ -3,6 +3,10 @@ DEM Usage Dashboards via JSON to be deployed by the Dynatrace BizOpsConfigurator
  
 Overview Dashboard - dem-usage-overview.json
 
+- Persona: Dynatrace Admin
+- Usecase: Billing Analysis
+- Workflow: DEM Usage
+
 ## Screenshots
 ![UI](images/overview.png?raw=true "Overview")
 ![UI](images/detailed-synthetic.png?raw=true "Detailed Synthetic")
