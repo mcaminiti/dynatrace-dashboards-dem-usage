@@ -1,369 +1,448 @@
 {
-    "metadata": {
-        "configurationVersions": [3],
-        "clusterVersion": "1.199.29.20200723-161931"
+  "metadata": {
+    "configurationVersions": [
+      5
+    ],
+    "clusterVersion": "1.225.109.20210907-135400"
+  },
+  "id": "bbbbbbbb-a005-a011-0000-000000000021",
+  "dashboardMetadata": {
+    "name": "DEM Usage - Overview",
+    "shared": false,
+    "owner": "matt.caminiti@dynatrace.com",
+    "tags": [
+      "Configurator"
+    ]
+  },
+  "tiles": [
+    {
+      "name": "Synthetics (Last 30 Days)",
+      "tileType": "HEADER",
+      "configured": true,
+      "bounds": {
+        "top": 0,
+        "left": 0,
+        "width": 760,
+        "height": 38
+      },
+      "tileFilter": {}
     },
-    "id": "bbbbbbbb-0002-0000-0000-000000000000",
-    "dashboardMetadata": {
-        "name": "DEM Usage - Overview",
-        "shared": true,
-        "owner": "matt.caminiti@dynatrace.com",
-        "sharingDetails": {
-            "linkShared": true,
-            "published": true
-        },
-        "dashboardFilter": {
-            "timeframe": ""
-        },
-        "tags": ["Configurator"]
+    {
+      "name": "Sessions (Last 30 Days)",
+      "tileType": "HEADER",
+      "configured": true,
+      "bounds": {
+        "top": 0,
+        "left": 798,
+        "width": 760,
+        "height": 38
+      },
+      "tileFilter": {}
     },
-    "tiles": [{
-        "name": "",
-        "tileType": "CUSTOM_CHARTING",
-        "configured": true,
-        "bounds": {
-            "top": 38,
-            "left": 0,
-            "width": 380,
-            "height": 342
-        },
-        "tileFilter": {
-            "timeframe": "-30d to now"
-        },
-        "filterConfig": {
-            "type": "MIXED",
-            "customName": "Total - Synthetic Actions (Browser Monitor)",
-            "defaultName": "Custom chart",
-            "chartConfig": {
-                "legendShown": true,
-                "type": "SINGLE_VALUE",
-                "series": [{
-                    "metric": "builtin:billing.synthetic.actions",
-                    "aggregation": "NONE",
-                    "type": "LINE",
-                    "entityType": "SYNTHETIC_TEST",
-                    "dimensions": [],
-                    "sortAscending": false,
-                    "sortColumn": true,
-                    "aggregationRate": "TOTAL"
-                }],
-                "resultMetadata": {}
-            },
-            "filtersPerEntityType": {}
+    {
+      "name": "Synthetics (Previous 30 Days)",
+      "tileType": "HEADER",
+      "configured": true,
+      "bounds": {
+        "top": 418,
+        "left": 0,
+        "width": 760,
+        "height": 38
+      },
+      "tileFilter": {}
+    },
+    {
+      "name": "Sessions (Previous 30 Days)",
+      "tileType": "HEADER",
+      "configured": true,
+      "bounds": {
+        "top": 418,
+        "left": 798,
+        "width": 760,
+        "height": 38
+      },
+      "tileFilter": {}
+    },
+    {
+      "name": "Markdown",
+      "tileType": "MARKDOWN",
+      "configured": true,
+      "bounds": {
+        "top": 798,
+        "left": 0,
+        "width": 304,
+        "height": 152
+      },
+      "tileFilter": {},
+      "markdown": "## [Synthetic Details](#dashboard;gtf=l_30_DAYS;gf=all;id=bbbbbbbb-0002-0000-0000-000000000001)\n\n## [Session Details](#dashboard;gtf=l_30_DAYS;gf=all;id=bbbbbbbb-a005-a011-0001-000000000021)\n"
+    },
+    {
+      "name": "Total - Synthetic Actions (Browser Monitor)",
+      "tileType": "DATA_EXPLORER",
+      "configured": true,
+      "bounds": {
+        "top": 38,
+        "left": 0,
+        "width": 380,
+        "height": 342
+      },
+      "tileFilter": {
+        "timeframe": "-30d to now"
+      },
+      "customName": "Total - Synthetic Actions (Browser Monitor)",
+      "queries": [
+        {
+          "id": "A",
+          "spaceAggregation": "AVG",
+          "timeAggregation": "DEFAULT",
+          "splitBy": [],
+          "metricSelector": "builtin:billing.synthetic.actions:splitBy():value:auto:sort(value(sum,descending)):limit(10)",
+          "enabled": true
         }
-    }, {
-        "name": "Synthetics (Last 30 Days)",
-        "tileType": "HEADER",
-        "configured": true,
-        "bounds": {
-            "top": 0,
-            "left": 0,
-            "width": 760,
-            "height": 38
+      ],
+      "visualConfig": {
+        "type": "SINGLE_VALUE",
+        "global": {
+          "theme": "DEFAULT",
+          "seriesType": "LINE"
         },
-        "tileFilter": {}
-    }, {
-        "name": "",
-        "tileType": "CUSTOM_CHARTING",
-        "configured": true,
-        "bounds": {
-            "top": 38,
-            "left": 380,
-            "width": 380,
-            "height": 342
-        },
-        "tileFilter": {
-            "timeframe": "-30d to now"
-        },
-        "filterConfig": {
-            "type": "MIXED",
-            "customName": "Total - Synthetic Requests (HTTP Monitors)",
-            "defaultName": "Custom chart",
-            "chartConfig": {
-                "legendShown": true,
-                "type": "SINGLE_VALUE",
-                "series": [{
-                    "metric": "builtin:billing.synthetic.requests",
-                    "aggregation": "NONE",
-                    "type": "LINE",
-                    "entityType": "SYNTHETIC_HTTPCHECK",
-                    "dimensions": [],
-                    "sortAscending": false,
-                    "sortColumn": true,
-                    "aggregationRate": "TOTAL"
-                }],
-                "resultMetadata": {}
-            },
-            "filtersPerEntityType": {}
+        "rules": [
+          {
+            "matcher": "A",
+            "properties": {
+              "seriesType": "LINE"
+            }
+          }
+        ],
+        "axes": {
+          "xAxis": {
+            "visible": true
+          },
+          "yAxes": []
         }
-    }, {
-        "name": "Sessions (Last 30 Days)",
-        "tileType": "HEADER",
-        "configured": true,
-        "bounds": {
-            "top": 0,
-            "left": 798,
-            "width": 760,
-            "height": 38
-        },
-        "tileFilter": {}
-    }, {
-        "name": "",
-        "tileType": "CUSTOM_CHARTING",
-        "configured": true,
-        "bounds": {
-            "top": 38,
-            "left": 798,
-            "width": 380,
-            "height": 342
-        },
-        "tileFilter": {
-            "timeframe": "-30d to now"
-        },
-        "filterConfig": {
-            "type": "MIXED",
-            "customName": "Total - Sessions without replay (Web)",
-            "defaultName": "Custom chart",
-            "chartConfig": {
-                "legendShown": true,
-                "type": "SINGLE_VALUE",
-                "series": [{
-                    "metric": "builtin:billing.apps.web.sessionsWithoutReplayByApplication",
-                    "aggregation": "NONE",
-                    "type": "LINE",
-                    "entityType": "APPLICATION",
-                    "dimensions": [{
-                        "id": "1",
-                        "name": "Type",
-                        "values": ["Billed"],
-                        "entityDimension": false
-                    }],
-                    "sortAscending": false,
-                    "sortColumn": true,
-                    "aggregationRate": "TOTAL"
-                }],
-                "resultMetadata": {}
-            },
-            "filtersPerEntityType": {}
+      }
+    },
+    {
+      "name": "Total - Synthetic Requests (HTTP Monitors)",
+      "tileType": "DATA_EXPLORER",
+      "configured": true,
+      "bounds": {
+        "top": 38,
+        "left": 380,
+        "width": 380,
+        "height": 342
+      },
+      "tileFilter": {
+        "timeframe": "-30d to now"
+      },
+      "customName": "Total - Synthetic Requests (HTTP Monitors)",
+      "queries": [
+        {
+          "id": "A",
+          "spaceAggregation": "AVG",
+          "timeAggregation": "DEFAULT",
+          "splitBy": [],
+          "metricSelector": "builtin:billing.synthetic.requests:splitBy():value:auto:sort(value(sum,descending)):limit(10)",
+          "enabled": true
         }
-    }, {
-        "name": "",
-        "tileType": "CUSTOM_CHARTING",
-        "configured": true,
-        "bounds": {
-            "top": 38,
-            "left": 1178,
-            "width": 380,
-            "height": 342
+      ],
+      "visualConfig": {
+        "type": "SINGLE_VALUE",
+        "global": {
+          "theme": "DEFAULT",
+          "seriesType": "LINE"
         },
-        "tileFilter": {
-            "timeframe": "-30d to now"
-        },
-        "filterConfig": {
-            "type": "MIXED",
-            "customName": "Total - Sessions with replay (Web)",
-            "defaultName": "Custom chart",
-            "chartConfig": {
-                "legendShown": true,
-                "type": "SINGLE_VALUE",
-                "series": [{
-                    "metric": "builtin:billing.apps.web.sessionsWithReplayByApplication",
-                    "aggregation": "NONE",
-                    "type": "LINE",
-                    "entityType": "APPLICATION",
-                    "dimensions": [{
-                        "id": "1",
-                        "name": "Type",
-                        "values": ["Billed"],
-                        "entityDimension": false
-                    }],
-                    "sortAscending": false,
-                    "sortColumn": true,
-                    "aggregationRate": "TOTAL"
-                }],
-                "resultMetadata": {}
-            },
-            "filtersPerEntityType": {}
+        "rules": [
+          {
+            "matcher": "A",
+            "properties": {
+              "seriesType": "LINE"
+            }
+          }
+        ],
+        "axes": {
+          "xAxis": {
+            "visible": true
+          },
+          "yAxes": []
         }
-    }, {
-        "name": "Synthetics (Previous 30 Days)",
-        "tileType": "HEADER",
-        "configured": true,
-        "bounds": {
-            "top": 418,
-            "left": 0,
-            "width": 760,
-            "height": 38
-        },
-        "tileFilter": {}
-    }, {
-        "name": "Sessions (Previous 30 Days)",
-        "tileType": "HEADER",
-        "configured": true,
-        "bounds": {
-            "top": 418,
-            "left": 798,
-            "width": 760,
-            "height": 38
-        },
-        "tileFilter": {}
-    }, {
-        "name": "",
-        "tileType": "CUSTOM_CHARTING",
-        "configured": true,
-        "bounds": {
-            "top": 456,
-            "left": 0,
-            "width": 380,
-            "height": 342
-        },
-        "tileFilter": {
-            "timeframe": "-30d to -60d"
-        },
-        "filterConfig": {
-            "type": "MIXED",
-            "customName": "Total - Synthetic Actions (Browser Monitor)",
-            "defaultName": "Custom chart",
-            "chartConfig": {
-                "legendShown": true,
-                "type": "SINGLE_VALUE",
-                "series": [{
-                    "metric": "builtin:billing.synthetic.actions",
-                    "aggregation": "NONE",
-                    "type": "LINE",
-                    "entityType": "SYNTHETIC_TEST",
-                    "dimensions": [],
-                    "sortAscending": false,
-                    "sortColumn": true,
-                    "aggregationRate": "TOTAL"
-                }],
-                "resultMetadata": {}
-            },
-            "filtersPerEntityType": {}
+      }
+    },
+    {
+      "name": "Total - Sessions without replay (Web)",
+      "tileType": "DATA_EXPLORER",
+      "configured": true,
+      "bounds": {
+        "top": 38,
+        "left": 798,
+        "width": 380,
+        "height": 342
+      },
+      "tileFilter": {
+        "timeframe": "-30d to now"
+      },
+      "customName": "Total - Sessions without replay (Web)",
+      "queries": [
+        {
+          "id": "A",
+          "spaceAggregation": "AVG",
+          "timeAggregation": "DEFAULT",
+          "splitBy": [],
+          "metricSelector": "builtin:billing.apps.web.sessionsWithoutReplayByApplication:filter(and(eq(Type,Billed))):splitBy():value:auto:sort(value(sum,descending)):limit(10)",
+          "enabled": true
         }
-    }, {
-        "name": "",
-        "tileType": "CUSTOM_CHARTING",
-        "configured": true,
-        "bounds": {
-            "top": 456,
-            "left": 380,
-            "width": 380,
-            "height": 342
+      ],
+      "visualConfig": {
+        "type": "SINGLE_VALUE",
+        "global": {
+          "theme": "DEFAULT",
+          "seriesType": "LINE"
         },
-        "tileFilter": {
-            "timeframe": "-30d to -60d"
-        },
-        "filterConfig": {
-            "type": "MIXED",
-            "customName": "Total - Synthetic Requests (HTTP Monitors)",
-            "defaultName": "Custom chart",
-            "chartConfig": {
-                "legendShown": true,
-                "type": "SINGLE_VALUE",
-                "series": [{
-                    "metric": "builtin:billing.synthetic.requests",
-                    "aggregation": "NONE",
-                    "type": "LINE",
-                    "entityType": "SYNTHETIC_HTTPCHECK",
-                    "dimensions": [],
-                    "sortAscending": false,
-                    "sortColumn": true,
-                    "aggregationRate": "TOTAL"
-                }],
-                "resultMetadata": {}
-            },
-            "filtersPerEntityType": {}
+        "rules": [
+          {
+            "matcher": "A",
+            "properties": {
+              "seriesType": "LINE"
+            }
+          }
+        ],
+        "axes": {
+          "xAxis": {
+            "visible": true
+          },
+          "yAxes": []
         }
-    }, {
-        "name": "",
-        "tileType": "CUSTOM_CHARTING",
-        "configured": true,
-        "bounds": {
-            "top": 456,
-            "left": 798,
-            "width": 380,
-            "height": 342
-        },
-        "tileFilter": {
-            "timeframe": "-30d to -60d"
-        },
-        "filterConfig": {
-            "type": "MIXED",
-            "customName": "Total - Sessions without replay (Web)",
-            "defaultName": "Custom chart",
-            "chartConfig": {
-                "legendShown": true,
-                "type": "SINGLE_VALUE",
-                "series": [{
-                    "metric": "builtin:billing.apps.web.sessionsWithoutReplayByApplication",
-                    "aggregation": "NONE",
-                    "type": "LINE",
-                    "entityType": "APPLICATION",
-                    "dimensions": [{
-                        "id": "1",
-                        "name": "Type",
-                        "values": ["Billed"],
-                        "entityDimension": false
-                    }],
-                    "sortAscending": false,
-                    "sortColumn": true,
-                    "aggregationRate": "TOTAL"
-                }],
-                "resultMetadata": {}
-            },
-            "filtersPerEntityType": {}
+      }
+    },
+    {
+      "name": "Total - Sessions with replay (Web)",
+      "tileType": "DATA_EXPLORER",
+      "configured": true,
+      "bounds": {
+        "top": 38,
+        "left": 1178,
+        "width": 380,
+        "height": 342
+      },
+      "tileFilter": {
+        "timeframe": "-30d to now"
+      },
+      "customName": "Total - Sessions with replay (Web)",
+      "queries": [
+        {
+          "id": "A",
+          "spaceAggregation": "AVG",
+          "timeAggregation": "DEFAULT",
+          "splitBy": [],
+          "metricSelector": "builtin:billing.apps.web.sessionsWithReplayByApplication:filter(and(eq(Type,Billed))):splitBy():value:auto:sort(value(sum,descending)):limit(10)",
+          "enabled": true
         }
-    }, {
-        "name": "",
-        "tileType": "CUSTOM_CHARTING",
-        "configured": true,
-        "bounds": {
-            "top": 456,
-            "left": 1178,
-            "width": 380,
-            "height": 342
+      ],
+      "visualConfig": {
+        "type": "SINGLE_VALUE",
+        "global": {
+          "theme": "DEFAULT",
+          "seriesType": "LINE"
         },
-        "tileFilter": {
-            "timeframe": "-30d to -60d"
-        },
-        "filterConfig": {
-            "type": "MIXED",
-            "customName": "Total - Sessions with replay (Web)",
-            "defaultName": "Custom chart",
-            "chartConfig": {
-                "legendShown": true,
-                "type": "SINGLE_VALUE",
-                "series": [{
-                    "metric": "builtin:billing.apps.web.sessionsWithReplayByApplication",
-                    "aggregation": "NONE",
-                    "type": "LINE",
-                    "entityType": "APPLICATION",
-                    "dimensions": [{
-                        "id": "1",
-                        "name": "Type",
-                        "values": ["Billed"],
-                        "entityDimension": false
-                    }],
-                    "sortAscending": false,
-                    "sortColumn": true,
-                    "aggregationRate": "TOTAL"
-                }],
-                "resultMetadata": {}
-            },
-            "filtersPerEntityType": {}
+        "rules": [
+          {
+            "matcher": "A",
+            "properties": {
+              "seriesType": "LINE"
+            }
+          }
+        ],
+        "axes": {
+          "xAxis": {
+            "visible": true
+          },
+          "yAxes": []
         }
-    }, {
-        "name": "Markdown",
-        "tileType": "MARKDOWN",
-        "configured": true,
-        "bounds": {
-            "top": 798,
-            "left": 0,
-            "width": 304,
-            "height": 152
+      }
+    },
+    {
+      "name": "Total - Synthetic Actions (Browser Monitor)",
+      "tileType": "DATA_EXPLORER",
+      "configured": true,
+      "bounds": {
+        "top": 456,
+        "left": 0,
+        "width": 380,
+        "height": 342
+      },
+      "tileFilter": {
+        "timeframe": "-30d to -60d"
+      },
+      "customName": "Total - Synthetic Actions (Browser Monitor)",
+      "queries": [
+        {
+          "id": "A",
+          "spaceAggregation": "AVG",
+          "timeAggregation": "DEFAULT",
+          "splitBy": [],
+          "metricSelector": "builtin:billing.synthetic.actions:splitBy():value:auto:sort(value(sum,descending)):limit(10)",
+          "enabled": true
+        }
+      ],
+      "visualConfig": {
+        "type": "SINGLE_VALUE",
+        "global": {
+          "theme": "DEFAULT",
+          "seriesType": "LINE"
         },
-        "tileFilter": {},
-        "markdown": "## [Synthetic Details](#dashboard;gtf=l_30_DAYS;gf=all;id=bbbbbbbb-0002-0000-0000-000000000001)\n\n## [Session Details](#dashboard;gtf=l_30_DAYS;gf=all;id=bbbbbbbb-0002-0000-0000-000000000002)\n"
-    }]
+        "rules": [
+          {
+            "matcher": "A",
+            "properties": {
+              "seriesType": "LINE"
+            }
+          }
+        ],
+        "axes": {
+          "xAxis": {
+            "visible": true
+          },
+          "yAxes": []
+        }
+      }
+    },
+    {
+      "name": "Total - Synthetic Requests (HTTP Monitors)",
+      "tileType": "DATA_EXPLORER",
+      "configured": true,
+      "bounds": {
+        "top": 456,
+        "left": 380,
+        "width": 380,
+        "height": 342
+      },
+      "tileFilter": {
+        "timeframe": "-30d to -60d"
+      },
+      "customName": "Total - Synthetic Requests (HTTP Monitors)",
+      "queries": [
+        {
+          "id": "A",
+          "spaceAggregation": "AVG",
+          "timeAggregation": "DEFAULT",
+          "splitBy": [],
+          "metricSelector": "builtin:billing.synthetic.requests:splitBy():value:auto:sort(value(sum,descending)):limit(10)",
+          "enabled": true
+        }
+      ],
+      "visualConfig": {
+        "type": "SINGLE_VALUE",
+        "global": {
+          "theme": "DEFAULT",
+          "seriesType": "LINE"
+        },
+        "rules": [
+          {
+            "matcher": "A",
+            "properties": {
+              "seriesType": "LINE"
+            }
+          }
+        ],
+        "axes": {
+          "xAxis": {
+            "visible": true
+          },
+          "yAxes": []
+        }
+      }
+    },
+    {
+      "name": "Total - Sessions without replay (Web)",
+      "tileType": "DATA_EXPLORER",
+      "configured": true,
+      "bounds": {
+        "top": 456,
+        "left": 798,
+        "width": 380,
+        "height": 342
+      },
+      "tileFilter": {
+        "timeframe": "-30d to -60d"
+      },
+      "customName": "Total - Sessions without replay (Web)",
+      "queries": [
+        {
+          "id": "A",
+          "spaceAggregation": "AVG",
+          "timeAggregation": "DEFAULT",
+          "splitBy": [],
+          "metricSelector": "builtin:billing.apps.web.sessionsWithoutReplayByApplication:filter(and(eq(Type,Billed))):splitBy():value:auto:sort(value(sum,descending)):limit(10)",
+          "enabled": true
+        }
+      ],
+      "visualConfig": {
+        "type": "SINGLE_VALUE",
+        "global": {
+          "theme": "DEFAULT",
+          "seriesType": "LINE"
+        },
+        "rules": [
+          {
+            "matcher": "A",
+            "properties": {
+              "seriesType": "LINE"
+            }
+          }
+        ],
+        "axes": {
+          "xAxis": {
+            "visible": true
+          },
+          "yAxes": []
+        }
+      }
+    },
+    {
+      "name": "Total - Sessions with replay (Web)",
+      "tileType": "DATA_EXPLORER",
+      "configured": true,
+      "bounds": {
+        "top": 456,
+        "left": 1178,
+        "width": 380,
+        "height": 342
+      },
+      "tileFilter": {
+        "timeframe": "-30d to -60d"
+      },
+      "customName": "Total - Sessions with replay (Web)",
+      "queries": [
+        {
+          "id": "A",
+          "spaceAggregation": "AVG",
+          "timeAggregation": "DEFAULT",
+          "splitBy": [],
+          "metricSelector": "builtin:billing.apps.web.sessionsWithReplayByApplication:filter(and(eq(Type,Billed))):splitBy():value:auto:sort(value(sum,descending)):limit(10)",
+          "enabled": true
+        }
+      ],
+      "visualConfig": {
+        "type": "SINGLE_VALUE",
+        "global": {
+          "theme": "DEFAULT",
+          "seriesType": "LINE"
+        },
+        "rules": [
+          {
+            "matcher": "A",
+            "properties": {
+              "seriesType": "LINE"
+            }
+          }
+        ],
+        "axes": {
+          "xAxis": {
+            "visible": true
+          },
+          "yAxes": []
+        }
+      }
+    }
+  ]
 }

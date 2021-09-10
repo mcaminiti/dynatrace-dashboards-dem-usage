@@ -1,254 +1,304 @@
 {
-    "metadata": {
-        "configurationVersions": [3],
-        "clusterVersion": "1.194.72.20200604-122905"
+  "metadata": {
+    "configurationVersions": [
+      5
+    ],
+    "clusterVersion": "1.225.109.20210907-135400"
+  },
+  "id": "4a42dc4f-3574-4443-9601-faaa45b60f7e",
+  "dashboardMetadata": {
+    "name": "DEM Usage - Detailed Synthetic View",
+    "shared": false,
+    "owner": "matt.caminiti@dynatrace.com"
+  },
+  "tiles": [
+    {
+      "name": "Synthetic Actions - Browser Monitors",
+      "tileType": "HEADER",
+      "configured": true,
+      "bounds": {
+        "top": 0,
+        "left": 0,
+        "width": 1406,
+        "height": 38
+      },
+      "tileFilter": {}
     },
-    "id": "08769027-884f-40dd-9714-1747aacc0b57",
-    "dashboardMetadata": {
-        "name": "DEM Usage - Detailed Synthetic View",
-        "shared": false,
-        "owner": "matt.caminiti@dynatrace.com",
-        "sharingDetails": {
-            "linkShared": true,
-            "published": false
-        },
-        "dashboardFilter": {
-            "timeframe": ""
-        }
+    {
+      "name": "Synthetic Actions - HTTP Monitors",
+      "tileType": "HEADER",
+      "configured": true,
+      "bounds": {
+        "top": 418,
+        "left": 0,
+        "width": 1406,
+        "height": 38
+      },
+      "tileFilter": {}
     },
-    "tiles": [{
-        "name": "",
-        "tileType": "CUSTOM_CHARTING",
-        "configured": true,
-        "bounds": {
-            "top": 38,
-            "left": 0,
-            "width": 380,
-            "height": 342
-        },
-        "tileFilter": {},
-        "filterConfig": {
-            "type": "MIXED",
-            "customName": "Total - Synthetic Actions (Browser Monitor)",
-            "defaultName": "Custom chart",
-            "chartConfig": {
-                "legendShown": true,
-                "type": "SINGLE_VALUE",
-                "series": [{
-                    "metric": "builtin:billing.synthetic.actions",
-                    "aggregation": "NONE",
-                    "type": "LINE",
-                    "entityType": "SYNTHETIC_TEST",
-                    "dimensions": [],
-                    "sortAscending": false,
-                    "sortColumn": true,
-                    "aggregationRate": "TOTAL"
-                }],
-                "resultMetadata": {}
-            },
-            "filtersPerEntityType": {}
+    {
+      "name": "Total - Synthetic Actions (Browser Monitor)",
+      "tileType": "DATA_EXPLORER",
+      "configured": true,
+      "bounds": {
+        "top": 38,
+        "left": 0,
+        "width": 380,
+        "height": 342
+      },
+      "tileFilter": {},
+      "customName": "Total - Synthetic Actions (Browser Monitor)",
+      "queries": [
+        {
+          "id": "A",
+          "spaceAggregation": "AVG",
+          "timeAggregation": "DEFAULT",
+          "splitBy": [],
+          "metricSelector": "builtin:billing.synthetic.actions:splitBy():value:auto:sort(value(sum,descending)):limit(10)",
+          "enabled": true
         }
-    }, {
-        "name": "",
-        "tileType": "CUSTOM_CHARTING",
-        "configured": true,
-        "bounds": {
-            "top": 38,
-            "left": 380,
-            "width": 380,
-            "height": 342
+      ],
+      "visualConfig": {
+        "type": "SINGLE_VALUE",
+        "global": {
+          "theme": "DEFAULT",
+          "seriesType": "LINE"
         },
-        "tileFilter": {},
-        "filterConfig": {
-            "type": "MIXED",
-            "customName": "Synthetic Actions (Browser Monitor)",
-            "defaultName": "Custom chart",
-            "chartConfig": {
-                "legendShown": true,
-                "type": "TOP_LIST",
-                "series": [{
-                    "metric": "builtin:billing.synthetic.actions",
-                    "aggregation": "NONE",
-                    "type": "LINE",
-                    "entityType": "SYNTHETIC_TEST",
-                    "dimensions": [{
-                        "id": "0",
-                        "name": "dt.entity.synthetic_test",
-                        "values": [],
-                        "entityDimension": true
-                    }],
-                    "sortAscending": false,
-                    "sortColumn": true,
-                    "aggregationRate": "TOTAL"
-                }],
-                "resultMetadata": {}
-            },
-            "filtersPerEntityType": {}
+        "rules": [
+          {
+            "matcher": "A",
+            "properties": {
+              "seriesType": "LINE"
+            }
+          }
+        ],
+        "axes": {
+          "xAxis": {
+            "visible": true
+          },
+          "yAxes": []
         }
-    }, {
-        "name": "Synthetic Actions - Browser Monitors",
-        "tileType": "HEADER",
-        "configured": true,
-        "bounds": {
-            "top": 0,
-            "left": 0,
-            "width": 1406,
-            "height": 38
-        },
-        "tileFilter": {}
-    }, {
-        "name": "Synthetic Actions - HTTP Monitors",
-        "tileType": "HEADER",
-        "configured": true,
-        "bounds": {
-            "top": 418,
-            "left": 0,
-            "width": 1406,
-            "height": 38
-        },
-        "tileFilter": {}
-    }, {
-        "name": "",
-        "tileType": "CUSTOM_CHARTING",
-        "configured": true,
-        "bounds": {
-            "top": 456,
-            "left": 0,
-            "width": 380,
-            "height": 342
-        },
-        "tileFilter": {},
-        "filterConfig": {
-            "type": "MIXED",
-            "customName": "Total - Synthetic Requests (HTTP Monitors)",
-            "defaultName": "Custom chart",
-            "chartConfig": {
-                "legendShown": true,
-                "type": "SINGLE_VALUE",
-                "series": [{
-                    "metric": "builtin:billing.synthetic.requests",
-                    "aggregation": "NONE",
-                    "type": "LINE",
-                    "entityType": "SYNTHETIC_HTTPCHECK",
-                    "dimensions": [],
-                    "sortAscending": false,
-                    "sortColumn": true,
-                    "aggregationRate": "TOTAL"
-                }],
-                "resultMetadata": {}
-            },
-            "filtersPerEntityType": {}
+      }
+    },
+    {
+      "name": "Synthetic Actions (Browser Monitor)",
+      "tileType": "DATA_EXPLORER",
+      "configured": true,
+      "bounds": {
+        "top": 38,
+        "left": 380,
+        "width": 380,
+        "height": 342
+      },
+      "tileFilter": {},
+      "customName": "Synthetic Actions (Browser Monitor)",
+      "queries": [
+        {
+          "id": "A",
+          "spaceAggregation": "AVG",
+          "timeAggregation": "DEFAULT",
+          "splitBy": [],
+          "metricSelector": "builtin:billing.synthetic.actions:splitBy(\"dt.entity.synthetic_test\"):value:auto:sort(value(sum,descending)):limit(10)",
+          "enabled": true
         }
-    }, {
-        "name": "",
-        "tileType": "CUSTOM_CHARTING",
-        "configured": true,
-        "bounds": {
-            "top": 456,
-            "left": 760,
-            "width": 760,
-            "height": 342
+      ],
+      "visualConfig": {
+        "type": "TOP_LIST",
+        "global": {
+          "theme": "DEFAULT",
+          "seriesType": "LINE"
         },
-        "tileFilter": {},
-        "filterConfig": {
-            "type": "MIXED",
-            "customName": "Synthetic Requests (HTTP Monitors)",
-            "defaultName": "Custom chart",
-            "chartConfig": {
-                "legendShown": true,
-                "type": "TIMESERIES",
-                "series": [{
-                    "metric": "builtin:billing.synthetic.requests",
-                    "aggregation": "NONE",
-                    "type": "LINE",
-                    "entityType": "SYNTHETIC_HTTPCHECK",
-                    "dimensions": [{
-                        "id": "0",
-                        "name": "dt.entity.http_check",
-                        "values": [],
-                        "entityDimension": true
-                    }],
-                    "sortAscending": false,
-                    "sortColumn": true,
-                    "aggregationRate": "TOTAL"
-                }],
-                "resultMetadata": {}
-            },
-            "filtersPerEntityType": {}
+        "rules": [
+          {
+            "matcher": "A",
+            "properties": {
+              "seriesType": "LINE"
+            }
+          }
+        ],
+        "axes": {
+          "xAxis": {
+            "visible": true
+          },
+          "yAxes": []
         }
-    }, {
-        "name": "",
-        "tileType": "CUSTOM_CHARTING",
-        "configured": true,
-        "bounds": {
-            "top": 38,
-            "left": 760,
-            "width": 760,
-            "height": 342
+      }
+    },
+    {
+      "name": "Synthetic Actions (Browser Monitor)",
+      "tileType": "DATA_EXPLORER",
+      "configured": true,
+      "bounds": {
+        "top": 38,
+        "left": 760,
+        "width": 760,
+        "height": 342
+      },
+      "tileFilter": {},
+      "customName": "Synthetic Actions (Browser Monitor)",
+      "queries": [
+        {
+          "id": "A",
+          "spaceAggregation": "AVG",
+          "timeAggregation": "DEFAULT",
+          "splitBy": [],
+          "metricSelector": "builtin:billing.synthetic.actions:splitBy(\"dt.entity.synthetic_test\"):value:auto:sort(value(sum,descending)):limit(10)",
+          "enabled": true
+        }
+      ],
+      "visualConfig": {
+        "type": "GRAPH_CHART",
+        "global": {
+          "theme": "DEFAULT",
+          "seriesType": "LINE"
         },
-        "tileFilter": {},
-        "filterConfig": {
-            "type": "MIXED",
-            "customName": "Synthetic Actions (Browser Monitor)",
-            "defaultName": "Custom chart",
-            "chartConfig": {
-                "legendShown": true,
-                "type": "TIMESERIES",
-                "series": [{
-                    "metric": "builtin:billing.synthetic.actions",
-                    "aggregation": "NONE",
-                    "type": "LINE",
-                    "entityType": "SYNTHETIC_TEST",
-                    "dimensions": [{
-                        "id": "0",
-                        "name": "dt.entity.synthetic_test",
-                        "values": [],
-                        "entityDimension": true
-                    }],
-                    "sortAscending": false,
-                    "sortColumn": true,
-                    "aggregationRate": "TOTAL"
-                }],
-                "resultMetadata": {}
-            },
-            "filtersPerEntityType": {}
+        "rules": [
+          {
+            "matcher": "A",
+            "properties": {
+              "seriesType": "LINE"
+            }
+          }
+        ],
+        "axes": {
+          "xAxis": {
+            "visible": true
+          },
+          "yAxes": []
         }
-    }, {
-        "name": "",
-        "tileType": "CUSTOM_CHARTING",
-        "configured": true,
-        "bounds": {
-            "top": 456,
-            "left": 380,
-            "width": 380,
-            "height": 342
+      }
+    },
+    {
+      "name": "Total - Synthetic Requests (HTTP Monitors)",
+      "tileType": "DATA_EXPLORER",
+      "configured": true,
+      "bounds": {
+        "top": 456,
+        "left": 0,
+        "width": 380,
+        "height": 342
+      },
+      "tileFilter": {},
+      "customName": "Total - Synthetic Requests (HTTP Monitors)",
+      "queries": [
+        {
+          "id": "A",
+          "spaceAggregation": "AVG",
+          "timeAggregation": "DEFAULT",
+          "splitBy": [],
+          "metricSelector": "builtin:billing.synthetic.requests:splitBy():value:auto:sort(value(sum,descending)):limit(10)",
+          "enabled": true
+        }
+      ],
+      "visualConfig": {
+        "type": "SINGLE_VALUE",
+        "global": {
+          "theme": "DEFAULT",
+          "seriesType": "LINE"
         },
-        "tileFilter": {},
-        "filterConfig": {
-            "type": "MIXED",
-            "customName": "Synthetic Requests (HTTP Monitors)",
-            "defaultName": "Custom chart",
-            "chartConfig": {
-                "legendShown": true,
-                "type": "TOP_LIST",
-                "series": [{
-                    "metric": "builtin:billing.synthetic.requests",
-                    "aggregation": "NONE",
-                    "type": "LINE",
-                    "entityType": "SYNTHETIC_HTTPCHECK",
-                    "dimensions": [{
-                        "id": "0",
-                        "name": "dt.entity.http_check",
-                        "values": [],
-                        "entityDimension": true
-                    }],
-                    "sortAscending": false,
-                    "sortColumn": true,
-                    "aggregationRate": "TOTAL"
-                }],
-                "resultMetadata": {}
-            },
-            "filtersPerEntityType": {}
+        "rules": [
+          {
+            "matcher": "A",
+            "properties": {
+              "seriesType": "LINE"
+            }
+          }
+        ],
+        "axes": {
+          "xAxis": {
+            "visible": true
+          },
+          "yAxes": []
         }
-    }]
+      }
+    },
+    {
+      "name": "Synthetic Requests (HTTP Monitors)",
+      "tileType": "DATA_EXPLORER",
+      "configured": true,
+      "bounds": {
+        "top": 456,
+        "left": 380,
+        "width": 380,
+        "height": 342
+      },
+      "tileFilter": {},
+      "customName": "Synthetic Requests (HTTP Monitors)",
+      "queries": [
+        {
+          "id": "A",
+          "spaceAggregation": "AVG",
+          "timeAggregation": "DEFAULT",
+          "splitBy": [],
+          "metricSelector": "builtin:billing.synthetic.requests:splitBy(\"dt.entity.http_check\"):value:auto:sort(value(sum,descending)):limit(10)",
+          "enabled": true
+        }
+      ],
+      "visualConfig": {
+        "type": "TOP_LIST",
+        "global": {
+          "theme": "DEFAULT",
+          "seriesType": "LINE"
+        },
+        "rules": [
+          {
+            "matcher": "A",
+            "properties": {
+              "seriesType": "LINE"
+            }
+          }
+        ],
+        "axes": {
+          "xAxis": {
+            "visible": true
+          },
+          "yAxes": []
+        }
+      }
+    },
+    {
+      "name": "Synthetic Requests (HTTP Monitors)",
+      "tileType": "DATA_EXPLORER",
+      "configured": true,
+      "bounds": {
+        "top": 456,
+        "left": 760,
+        "width": 760,
+        "height": 342
+      },
+      "tileFilter": {},
+      "customName": "Synthetic Requests (HTTP Monitors)",
+      "queries": [
+        {
+          "id": "A",
+          "spaceAggregation": "AVG",
+          "timeAggregation": "DEFAULT",
+          "splitBy": [],
+          "metricSelector": "builtin:billing.synthetic.requests:splitBy(\"dt.entity.http_check\"):value:auto:sort(value(sum,descending)):limit(10)",
+          "enabled": true
+        }
+      ],
+      "visualConfig": {
+        "type": "GRAPH_CHART",
+        "global": {
+          "theme": "DEFAULT",
+          "seriesType": "LINE"
+        },
+        "rules": [
+          {
+            "matcher": "A",
+            "properties": {
+              "seriesType": "LINE"
+            }
+          }
+        ],
+        "axes": {
+          "xAxis": {
+            "visible": true
+          },
+          "yAxes": []
+        }
+      }
+    }
+  ]
 }
